@@ -29,6 +29,8 @@ $file = ([Environment]::GetEnvironmentVariable("ProgramFiles(x86)")+"\Steam\stea
 
 If (Test-Path $file) {
 
+Copy-Item $file -Destination ("$env:TEMP\UserOption.xml")
+Write-Verbose ("Backup was created in the user temp file")
 [XML]$xmldata = Get-Content $file
 
     If ($ShowRegion -eq $true) {
