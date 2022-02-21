@@ -1,4 +1,9 @@
-﻿Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
+﻿# Lost Ark Region Switcher
+# Description: With this script you can change the Lost Ark region without starting the game.
+# (c) totedan 21.01.2022 v1.0
+# freeware license.
+
+Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 
 $title = 'Lost Ark Region Switcher'
 $message = 'In which region would you like to launch Lost Ark?'
