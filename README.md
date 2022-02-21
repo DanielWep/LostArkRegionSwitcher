@@ -9,9 +9,9 @@ Additionally, you can check the currently configured Lost Ark region.
 - Administrative permission to run Powershell scripts on the computer
 
 ## How to run this script
-``
+```
 LostArkRegionSwitcher.ps1
-``
+```
 
 After changing the Lost Ark region, you will need to manually launch the game via Steam. 
 
