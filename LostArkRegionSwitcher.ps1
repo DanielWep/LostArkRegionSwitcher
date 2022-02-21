@@ -49,3 +49,4 @@ Write-Verbose ("Backup was created in the user temp file")
     }
 
 }
+pause 20
