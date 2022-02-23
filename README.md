@@ -3,6 +3,8 @@
 
 Additionally, you can check the currently configured Lost Ark region. 
 
+> Use it at your own risk. However, the script only changes the value of the region in the UserOption.xml file. 
+
 ## Requirements
 
 - Powershell 5.x or 7.x is required.
