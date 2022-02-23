@@ -9,6 +9,11 @@ Additionally, you can check the currently configured Lost Ark region.
 - Administrative permission to run Powershell scripts on the computer
 
 ## How to run this script
+
+First, it will ask for the Steam installation path and this path will be saved in a file in the user's temp folder. 
+
+Also, before changing the region, a backup copy of the UserOption.xml user file is created, which is also saved in the user's temporary folder.
+
 ```
 LostArkRegionSwitcher.ps1
 ```
