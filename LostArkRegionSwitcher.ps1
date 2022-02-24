@@ -49,11 +49,26 @@ $file = ($steampath+"\steamapps\common\Lost Ark\EFGame\Config\UserOption.xml")
             @($xmlData.UserOption.SaveAccountOptionData.SelectNodes('//RegionID')) | %{$_.'#text'=($_.'#text' -replace $_.'#text',$NewRegionID)}
             $xmlData.Save($file)
             Write-Host ("Your new region is set to **$NewRegionID**") -ForegroundColor Green
-            Write-Host ("Now you can launch Lost Ark via Steam. Have fun in Arkesia!") -ForegroundColor Green
+            $message = 'Do you want to start Lost Ark?'
+            $yes = New-Object System.Management.Automation.Host.ChoiceDescription '&Yes', 'Yes, please start Lost Ark now.'
+            $no = New-Object System.Management.Automation.Host.ChoiceDescription '&No', 'No, please do nothing.'
+            $options = [System.Management.Automation.Host.ChoiceDescription[]]($yes, $no)
+            $result = $host.ui.PromptForChoice($title,$message, $options,0)
+            switch ($result) {
+                0 { $StartLostArk = $true }
+                1 { $StartLostArk = $false }
+            }
+            If ($StartLostArk -eq $true) {
+            Write-Host ("Lost Ark will start now. Have fun in Arkesia!") -ForegroundColor Green
+            Start-Process "$steampath\steam.exe" -ArgumentList "-applaunch 1599340"
+            } else {
+            Write-Host ("You need to launch Lost Ark manually. Have fun in Arkesia!") -ForegroundColor Green
+            }
         }
     } else {
         Write-Host ("Something went wrong. We could not found the Lost Ark user data.") -ForegroundColor Red
-        Write-Host ("Please run the script again and select the correct Steam installation path!!") -ForegroundColor Red
+        Write-Host ("Please run the script again and select the correct Steam installation path!") -ForegroundColor Red
         Remove-Item ("$env:TEMP\lostarkregionswitcher.ini")
     }
-pause
+Write-Host ("The PowerShell window will be close in 10s...")
+sleep 10
