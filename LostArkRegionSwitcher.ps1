@@ -1,6 +1,6 @@
 ﻿# Lost Ark Region Switcher
 # Description: With this script you can change the Lost Ark region without starting the game.
-# (c) totedan 23.02.2022 v1.0.5
+# (c) totedan 24.02.2022 v1.0.7
 # freeware license.
 
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
